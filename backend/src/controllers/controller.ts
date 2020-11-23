@@ -1,31 +1,51 @@
-import { Request, Response } from "express";
+import { Request, Response, text } from "express";
 import { Link } from '../models/link';
 
-const links: Link[] = [];
+const links : Link[] = [];
 let proxId = 1;
 
-// create new url shorter
+// create new code random for url shorter
 function generateCode() {
   let text = '';
-  const possible = '';
+  const possible = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijlmnopqrstuvxz0123456789#$@$&';
+  for(let i=0; i < 5; i++) 
+    text += possible.charAt(Math.floor(Math.random() * possible.length));
+
+    return text;
+  
 }
 
 // creating link
 function postLink(req: Request, res: Response) {
   const link = req.body as Link;
   link.id = proxId++;
-  link.code =
-  res.send('postLink');
+  link.code = generateCode();
+  link.hits = 0;
+  links.push(link);
+  res.status(201).json(link);
 }
 
 // returns links informations
 function getLink(req: Request, res: Response) {
-  res.send('getLink');
+  const code = req.params.code as string;
+  const link = links.find(item => item.code === code);
+  if (!link) {
+    res.sendStatus(404)
+  } else {
+    res.json(link);
+  }
 }
 
 // returns the link and counts access
 function hitLink(req: Request, res: Response) {
-  res.send('hitLink');
+  const code = req.params.code as string;
+  const index = links.findIndex(item => item.code === code);
+  if (index === -1) {
+    res.sendStatus(404)
+  } else {
+    links[index].hits!++;
+    res.json(links[index]);
+  }
 }
 
 export default {
