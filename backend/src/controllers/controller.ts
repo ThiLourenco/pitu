@@ -1,8 +1,6 @@
 import { Request, Response, text } from "express";
 import { Link } from '../models/link';
-
-const links : Link[] = [];
-let proxId = 1;
+import linksRepository from '../models/linksRepository';
 
 // create new code random for url shorter
 function generateCode() {
@@ -16,19 +14,20 @@ function generateCode() {
 }
 
 // creating link
-function postLink(req: Request, res: Response) {
+async function postLink(req: Request, res: Response) {
   const link = req.body as Link;
-  link.id = proxId++;
   link.code = generateCode();
   link.hits = 0;
-  links.push(link);
+  const result = await linksRepository.add(link);
+  if(!result.id) return res.sendStatus(401);
+  link.id = result.id;
   res.status(201).json(link);
 }
 
 // returns links informations
-function getLink(req: Request, res: Response) {
+async function getLink(req: Request, res: Response) {
   const code = req.params.code as string;
-  const link = links.find(item => item.code === code);
+  const link = await linksRepository.findByCode(code);
   if (!link) {
     res.sendStatus(404)
   } else {
@@ -37,14 +36,13 @@ function getLink(req: Request, res: Response) {
 }
 
 // returns the link and counts access
-function hitLink(req: Request, res: Response) {
+async function hitLink(req: Request, res: Response) {
   const code = req.params.code as string;
-  const index = links.findIndex(item => item.code === code);
-  if (index === -1) {
+  const link = await linksRepository.hit(code);
+  if (!link) {
     res.sendStatus(404)
   } else {
-    links[index].hits!++;
-    res.json(links[index]);
+    res.json(link);
   }
 }
 
