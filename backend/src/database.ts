@@ -1,5 +1,8 @@
+import * as dotenv from 'dotenv';
+dotenv.config();
+
 import { Sequelize } from 'sequelize';
 
-const sequelize = new Sequelize('mysql://root:pass@localhost:3306/pitu');
+const sequelize = new Sequelize(process.env.DB_CONNECTION_STRING!);
 
 export default sequelize;
