@@ -1,5 +1,5 @@
 import React from 'react';
-import Header from '../../component/Header';
+import Header from '../../components/Header';
 import { Container } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { StatsContainer } from './styles';
