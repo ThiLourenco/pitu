@@ -1,8 +1,8 @@
 import React from 'react';
 
-import Header from '../../component/Header';
+import Header from '../../components/Header';
 import { Container, InputGroup, FormControl, Button, Alert, Spinner } from 'react-bootstrap';
-import { ContentContainer, Form } from './styles';
+import { ContentContainer, Form, AdsBlock } from './styles';
 
 import ShortenerService from '../../services/shortenerService';
 
@@ -87,6 +87,9 @@ class HomePage extends React.Component {
              {errorMessege && <Alert variant='danger'>{errorMessege}</Alert>}  
           </Form>
         </ContentContainer>
+        {/*<ContentContainer>
+          <AdsBlock><p className='text-center'>AdSense</p></AdsBlock>
+        </ContentContainer>*/}
       </Container>
     )
   }
