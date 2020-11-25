@@ -1,6 +1,6 @@
 import React from 'react';
 import Header from '../../components/Header';
-import { Container } from 'react-bootstrap';
+import { Container, Spinner } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { StatsContainer } from './styles';
 import ShortenerService from '../../services/shortenerService';
@@ -38,16 +38,19 @@ class RedirectPage extends React.Component {
         {errorMessage ? (
           <>
             <Header>
-              Seu novo encurtador de urls. \O/
+              Seu novo encurtador de urls.
             </Header>
             <StatsContainer className='text-center'>
-              <FontAwesomeIcon size='3x' color='#f8d7da' icon='exclamation-triangle' />
+              <FontAwesomeIcon size='5x' color='#f8d7da' icon='exclamation-triangle' />
               <p className='m-3'>{errorMessage}</p>
               <a className='btn btn-primary' href='/'>Encurtar nova URL</a>
             </StatsContainer>
           </>
         ) : (
-          <p className="text-center">Redirecionando...</p>
+          <StatsContainer className='text-center'>
+          <h4 className="text-center">Estamos redirecionando...</h4>
+          <Spinner animation='border' />
+          </StatsContainer>
         )} 
       </Container>
     );

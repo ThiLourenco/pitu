@@ -1,5 +1,5 @@
 import React from 'react';
-import Header from '../../component/Header';
+import Header from '../../components/Header';
 
 import { Container } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -50,7 +50,7 @@ class StatsPage extends React.Component {
 
     return (
       <Container>
-        <Header>Estatísica:</Header>
+        <Header>Estatística</Header>
         {errorMessage ? (
           <StatsContainer className='text-center'>
             <FontAwesomeIcon size='3x' color='#f8d7da' icon='exclamation-triangle' />
@@ -71,7 +71,7 @@ class StatsPage extends React.Component {
                 <StatsBoxTitle>Última visita</StatsBoxTitle>
               </StatsBox>
             </StatsRow>
-            <a className='btn btn-primary' href='/'>Encurtar nova URL</a>
+            <a className='btn btn-primary m-3' href='/' >Encurtar nova URL</a>
           </StatsContainer>
         )}
       </Container>
