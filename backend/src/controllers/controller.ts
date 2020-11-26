@@ -5,7 +5,7 @@ import linksRepository from '../models/linksRepository';
 // create new code random for url shorter
 function generateCode() {
   let text = '';
-  const possible = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijlmnopqrstuvxz0123456789#$@$&';
+  const possible = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijlmnopqrstuvxz0123456789';
   for(let i=0; i < 5; i++) 
     text += possible.charAt(Math.floor(Math.random() * possible.length));
 
