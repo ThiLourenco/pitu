@@ -71,7 +71,7 @@ class StatsPage extends React.Component {
                 <StatsBoxTitle>Última visita</StatsBoxTitle>
               </StatsBox>
             </StatsRow>
-            <a className='btn btn-primary m-3' href='/' >Encurtar nova URL</a>
+            <a className='btn btn-outline-primary m-3' href='/' >Encurtar nova URL</a>
           </StatsContainer>
         )}
       </Container>

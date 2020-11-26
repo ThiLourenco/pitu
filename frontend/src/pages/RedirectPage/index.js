@@ -25,7 +25,7 @@ class RedirectPage extends React.Component {
 
       window.location = url;
     } catch(err) {
-      this.setState({ isLoading: false, errorMessage: 'Oops, a url solicitada não existe' });
+      this.setState({ isLoading: false, errorMessage: 'Oops, a url solicitada não existe!' });
     }
   }
 
@@ -41,16 +41,18 @@ class RedirectPage extends React.Component {
               Seu novo encurtador de urls.
             </Header>
             <StatsContainer className='text-center'>
-              <FontAwesomeIcon size='5x' color='#f8d7da' icon='exclamation-triangle' />
+              <FontAwesomeIcon size='8x' color='#f8d7da' icon='exclamation-triangle' />
               <p className='m-3'>{errorMessage}</p>
-              <a className='btn btn-primary' href='/'>Encurtar nova URL</a>
+              <a className='btn btn-outline-primary' href='/'>Encurtar nova URL</a>
             </StatsContainer>
           </>
         ) : (
-          <StatsContainer className='text-center'>
+          <Container>
+          <StatsContainer className='text-center m-3'>
           <h4 className="text-center">Estamos redirecionando...</h4>
-          <Spinner animation='border' />
+          <Spinner animation='border' role='status' />
           </StatsContainer>
+          </Container>
         )} 
       </Container>
     );

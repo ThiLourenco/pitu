@@ -4,6 +4,8 @@ export const ContentContainer = styled.div`
   display: flex;
   justify-content: center !important;
   margin-buttom: 2rem;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 600;
 `;
 
 export const Form = styled.form`

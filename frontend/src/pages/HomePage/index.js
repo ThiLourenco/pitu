@@ -77,7 +77,7 @@ class HomePage extends React.Component {
                     ref={(input) => this.inputURL = input }
                   />
                   <InputGroup.Append>
-                    <Button variant='outline-secondary' onClick={() => this.copyToClipboard()}>Copiar</Button>
+                    <Button variant='outline-success' onClick={() => this.copyToClipboard()}>Copiar</Button>
                   </InputGroup.Append>
                 </InputGroup>
                 <p>Para acompanhar as estatísticas, acesse https://pitu.tk/{code}/stats</p>

@@ -2,6 +2,8 @@ import styled from 'styled-components';
 
 export const StatsContainer = styled.div`
   display: block;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 600;
 `;
 
 export const StatsRow = styled.div`

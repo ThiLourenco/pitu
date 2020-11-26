@@ -1,5 +1,6 @@
 $body-color: #43616f;
-$body-bg: #fff;
+$body-bg: rgba(255, 255, 255, 0.905);
 $font-size-base: 0.925rem;
 
 @import "~bootstrap/scss/bootstrap";
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;1,700&family=Roboto:ital,wght@0,400;0,500;1,700&display=swap');

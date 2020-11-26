@@ -2,6 +2,8 @@ import styled from 'styled-components';
 
 export const StatsContainer = styled.div`
   display: block;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
 `;
 
 export const StatsRow = styled.div`
@@ -9,6 +11,8 @@ export const StatsRow = styled.div`
   flex-wrap: wrap;
   justify-content: center !important;
   margin-buttom: 0.5rem;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 700;
 `;
 
 export const StatsBox = styled.div`
@@ -19,10 +23,14 @@ export const StatsBox = styled.div`
   border-radius: .25rem;
   text-align: center;
   margin: .5rem;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
 `;
 
 export const StatsBoxTitle = styled.div`
-  font-weight: 500;
   padding: 0.25rem;
   display: block;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  
 `;
