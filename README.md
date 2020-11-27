@@ -1,6 +1,10 @@
+<h1>
+  <img alt="happy" title="pitu" src="./assets/logo.png" />
+</h1>
+
 # 💻 Pitu 
 
-Pitu is a simple micro-SaaS for URL shortening
+Pitu is a simple micro-SaaS for URL shortening.
 
 ### 🚀 Technology
 
@@ -13,7 +17,7 @@ Pitu is a simple micro-SaaS for URL shortening
 - [Amazon](https://aws.amazon.com/)
 
 #### 🍃 Deploy
-<a href="http://www.pitu-url.tk/" target="_blank" rel="noopener noreferrer">http://www.pitu-url.tk/</a>
+<a target="_blank" href="http://www.pitu-url.tk/" rel="noopener noreferrer">http://www.pitu-url.tk/</a>
 
 ### 📝 LICENSE
 
