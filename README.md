@@ -13,7 +13,7 @@ Pitu is a simple micro-SaaS for URL shortening
 - [Amazon](https://aws.amazon.com/)
 
 #### 🍃 Deploy
-[http://www.pitu-url.tk/](http://www.pitu-url.tk/)
+<a href="http://www.pitu-url.tk/" target="_blank" rel="noopener noreferrer">http://www.pitu-url.tk/</a>
 
 ### 📝 LICENSE
 
