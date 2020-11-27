@@ -15,6 +15,7 @@ export const Form = styled.form`
   border: solid 1px #ccc;
   border-radius: .25rem;
   text-align: center;
+  font-weight: 500;
 `;
 
 export const AdsBlock = styled.div`

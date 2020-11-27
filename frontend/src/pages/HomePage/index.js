@@ -25,7 +25,7 @@ class HomePage extends React.Component {
     this.setState({ isLoading: true, errorMessege: '' });
 
     if (!url) {
-      this.setState({ isLoading: false, errorMessege: 'Informe uma url válida para o encurtar' });
+      this.setState({ isLoading: false, errorMessege: 'Informe uma URL válida.' });
     } else {
       try {
         const service = new ShortenerService();
@@ -50,7 +50,7 @@ class HomePage extends React.Component {
 
     return (
       <Container>
-        <Header>Conheça agora Pitu, seu novo encurtador de URL.</Header>
+        <Header>Conheça agora Pitu, seu novo encurtador de URL</Header>
         <ContentContainer> 
           <Form onSubmit={this.handleSubmit}>
             <InputGroup className='mb-3'>
@@ -79,7 +79,7 @@ class HomePage extends React.Component {
                     <Button variant='outline-success' onClick={() => this.copyToClipboard()}>Copiar</Button>
                   </InputGroup.Append>
                 </InputGroup>
-                <p>Para acompanhar as estatísticas, acesse {vars.HOST_APP + code}/stats</p>
+                <p>Para acompanhar as estatísticas acesse {vars.HOST_APP + code}/stats</p>
                 </>
               )   
              )}

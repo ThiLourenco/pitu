@@ -14,7 +14,7 @@ class NotFoundPage extends React.Component {
       <Container>    
          <>
             <StatsContainer className='text-center'>
-              <h2 className="text-center mb-3">Oops... Page not found :( </h2>
+              <h2 className="text-center mb-3">Oops... Página não encontrada :( </h2>
 
               <FontAwesomeIcon size='7x' color='#f8d7da' icon='exclamation-triangle' />
               <p className='m-3'>Retorne a página principal</p>

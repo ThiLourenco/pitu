@@ -4,7 +4,7 @@
 
 # 💻 Pitu 
 
-Pitu is a simple micro-SaaS for URL shortening.
+Pitu is a simple but efficiency micro-SaaS for URL shortening.
 
 ### 🚀 Technology
 
