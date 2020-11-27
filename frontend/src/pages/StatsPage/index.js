@@ -10,6 +10,8 @@ import { StatsContainer, StatsRow, StatsBox, StatsBoxTitle } from './styles';
 import { parseISO, formatRelative } from 'date-fns';
 import ptBR from 'date-fns/locale/pt-BR';
 
+import vars from '../../configs/vars';
+
 class StatsPage extends React.Component {
   constructor(props) {
     super(props);
@@ -59,7 +61,7 @@ class StatsPage extends React.Component {
           </StatsContainer>
         ) : (
           <StatsContainer className='text-center'>
-            <p><strong>https://pitu.tk/{shortenedURL.code}</strong></p>
+            <p><strong>{vars.HOST_APP + shortenedURL.code}</strong></p>
             <p>Redireciona para: <br/> {shortenedURL.url}</p>
             <StatsRow>
               <StatsBox>
