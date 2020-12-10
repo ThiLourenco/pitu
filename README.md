@@ -14,10 +14,7 @@ Pitu is a simple but efficiency micro-SaaS for URL shortening.
 - [MySQL](https://www.mysql.com/)
 - [Sequelize](https://sequelize.org/)
 - [Express](https://expressjs.com/)
-- [Amazon](https://aws.amazon.com/)
 
-#### 🍃 Deploy
-<a target="_blank" href="http://www.pitu-url.tk/" rel="noopener noreferrer">http://www.pitu-url.tk/</a>
 
 ### 📝 LICENSE
 
