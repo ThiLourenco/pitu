@@ -1,4 +1,4 @@
-import Sequelize, { Optional, Model } from 'sequelize';
+import Sequelize, { Optional, Model, DataTypes } from 'sequelize';
 import { Link } from './link';
 import database from '../database';
 
@@ -10,22 +10,22 @@ export interface ILinkModel extends Model<Link, iLinkCreationAttributes>, Link {
 // when creating the tables rules will be followed
 const LinkModel = database.define<ILinkModel>('link', {
   id: {
-    type: Sequelize.INTEGER.UNSIGNED,
+    type: DataTypes.INTEGER.UNSIGNED,
     primaryKey: true,
     autoIncrement: true,
     allowNull: false
   },
   url: {
-    type: Sequelize.STRING(255),
+    type: DataTypes.STRING,
     allowNull: false
   },
   code: {
-    type: Sequelize.STRING(20),
+    type: DataTypes.STRING(20),
     unique: true,
     allowNull: false
   },
   hits: {
-    type: Sequelize.INTEGER.UNSIGNED,
+    type: DataTypes.INTEGER.UNSIGNED,
     allowNull: false,
     defaultValue: 0
   }
