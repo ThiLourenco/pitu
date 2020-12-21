@@ -11,7 +11,7 @@ Pitu is a simple but efficiency micro-SaaS for URL shortening.
 - [React](https://reactjs.org)
 - [Typescript](https://www.typescriptlang.org/)
 - [Node.js](https://nodejs.org/en/)
-- [MySQL](https://www.mysql.com/)
+- [Postgre](https://www.postgresql.org/)
 - [Sequelize](https://sequelize.org/)
 - [Express](https://expressjs.com/)
 

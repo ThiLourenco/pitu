@@ -1,17 +1,17 @@
 import linkModel, { ILinkModel } from './linkModel';
 import { Link } from './link';
 
-// find link by code / select
+// find link by code
 function findByCode(code: string) {
   return linkModel.findOne<ILinkModel>({ where: { code }});
 }
 
-// add new link / insert
+// add new link
 function add(link: Link) {
   return linkModel.create<ILinkModel>(link);
 }
 
-// update existing link / update
+// update existing link hits
 async function hit(code: string) {
   const link = await findByCode(code);
   if (!link) return null;

@@ -1,4 +1,4 @@
-import { Request, Response, text } from "express";
+import { Request, Response } from "express";
 import { Link } from '../models/link';
 import linksRepository from '../models/linksRepository';
 
@@ -19,6 +19,7 @@ async function postLink(req: Request, res: Response) {
   link.code = generateCode();
   link.hits = 0;
   const result = await linksRepository.add(link);
+
   if(!result.id) return res.sendStatus(401);
   link.id = result.id;
   res.status(201).json(link);
@@ -28,6 +29,7 @@ async function postLink(req: Request, res: Response) {
 async function getLink(req: Request, res: Response) {
   const code = req.params.code as string;
   const link = await linksRepository.findByCode(code);
+
   if (!link) {
     res.sendStatus(404)
   } else {
@@ -39,6 +41,7 @@ async function getLink(req: Request, res: Response) {
 async function hitLink(req: Request, res: Response) {
   const code = req.params.code as string;
   const link = await linksRepository.hit(code);
+
   if (!link) {
     res.sendStatus(404)
   } else {
