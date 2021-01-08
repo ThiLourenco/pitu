@@ -16,6 +16,9 @@ export const Form = styled.form`
   border-radius: .25rem;
   text-align: center;
   font-weight: 500;
+  background-color: #4d99ea;
+  background-image: linear-gradient(135deg, #4d99ea 0%, #6bf067 100%);
+
 `;
 
 export const AdsBlock = styled.div`
@@ -25,4 +28,15 @@ export const AdsBlock = styled.div`
   padding: 2rem;
   flex: 0 0 80%;
   max-width: 80%;
+`;
+
+export const UrlContainer = styled.div`
+  margin: 2rem auto 1rem;
+  flex: 0 0 80%;
+  max-width: 80%;
+  padding: 1rem;
+  border-radius: 0.4rem;
+  justify-content: center;
+  align-item: center;
+  
 `;

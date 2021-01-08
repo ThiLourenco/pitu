@@ -1,16 +1,24 @@
 import React from 'react';
 import Header from '../../components/Header';
+import Buttom from '../../components/Buttom';
 
 import { Container } from 'react-bootstrap';
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 import ShortenerService from '../../services/shortenerService';
-import { StatsContainer, StatsRow, StatsBox, StatsBoxTitle } from './styles';
 
 import { parseISO, formatRelative } from 'date-fns';
 import ptBR from 'date-fns/locale/pt-BR';
 
 import vars from '../../configs/vars';
+
+import { 
+  StatsContainer, 
+  StatsRow, 
+  StatsBox, 
+  StatsBoxTitle 
+} from './styles';
 
 class StatsPage extends React.Component {
   constructor(props) {
@@ -41,7 +49,7 @@ class StatsPage extends React.Component {
 
       this.setState({ isLoading: false, shortenedURL });
     } catch(err) {
-      this.setState({ isLoading: false, errorMessage: 'Oops. a URL solicidada não existe. :('})
+      this.setState({ isLoading: false, errorMessage: 'Oops, ocorreu um erro ao consultar as estatísticas.'})
 
     }
   }
@@ -55,9 +63,9 @@ class StatsPage extends React.Component {
         <Header>Estatística</Header>
         {errorMessage ? (
           <StatsContainer className='text-center'>
-            <FontAwesomeIcon size='3x' color='#f8d7da' icon='exclamation-triangle' />
+            <FontAwesomeIcon size='5x' color='#f8d7da' icon='exclamation-triangle' />
             <p className='m-3'>{errorMessage}</p>
-            <a className='btn btn-primary' href='/'>Encurtar nova URL</a>
+            <Buttom />
           </StatsContainer>
         ) : (
           <StatsContainer className='text-center'>
@@ -73,7 +81,7 @@ class StatsPage extends React.Component {
                 <StatsBoxTitle>Última visita</StatsBoxTitle>
               </StatsBox>
             </StatsRow>
-            <a className='btn btn-outline-primary m-3' href='/' >Encurtar nova URL</a>
+            <Buttom />
           </StatsContainer>
         )}
       </Container>

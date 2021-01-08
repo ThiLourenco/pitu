@@ -4,6 +4,7 @@ export const StatsContainer = styled.div`
   display: block;
   font-family: 'Roboto', sans-serif;
   font-weight: 400;
+  
 `;
 
 export const StatsRow = styled.div`
@@ -23,6 +24,9 @@ export const StatsBox = styled.div`
   margin: .5rem;
   font-family: 'Roboto', sans-serif;
   font-weight: 400;
+  background-color: #0093E9;
+  background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
+
 `;
 
 export const StatsBoxTitle = styled.div`

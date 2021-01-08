@@ -1,9 +1,14 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Header from '../../components/Header';
 import { Container, InputGroup, FormControl, Button, Alert, Spinner } from 'react-bootstrap';
-import { ContentContainer, Form, AdsBlock } from './styles';
 import ShortenerService from '../../services/shortenerService';
 import vars from '../../configs/vars';
+import { 
+  ContentContainer, 
+  Form, 
+  UrlContainer 
+} from './styles';
 
 class HomePage extends React.Component {
   constructor(props) {
@@ -33,7 +38,7 @@ class HomePage extends React.Component {
 
         this.setState({ isLoading: false, code: result.code });
       }catch(err) {
-        this.setState({ isLoading: false, errorMessege: 'Oops, ocorreu um erro ao tentar encurtar a sua url. :(' });
+        this.setState({ isLoading: false, errorMessege: 'Oops, ocorreu um erro ao tentar encurtar a sua url :(' });
       }
     }
   }
@@ -68,7 +73,7 @@ class HomePage extends React.Component {
               <Spinner animation='border' />
             ) : ( 
               code && (
-                <> 
+                <UrlContainer> 
                 <InputGroup className='mb-3'>
                   <FormControl
                     autoFocus={true}
@@ -76,19 +81,18 @@ class HomePage extends React.Component {
                     ref={(input) => this.inputURL = input }
                   />
                   <InputGroup.Append>
-                    <Button variant='outline-success' onClick={() => this.copyToClipboard()}>Copiar</Button>
+                    <Button variant='success' onClick={() => this.copyToClipboard()}>Copiar</Button>
                   </InputGroup.Append>
                 </InputGroup>
-                <p>Para acompanhar as estatísticas acesse {vars.HOST_APP + code}/stats</p>
-                </>
+                <p>Para acompanhar as estatísticas, acesse  {' '} 
+                  <Link to={`${code}/stats`}> aqui.</Link>
+                </p>
+                </UrlContainer>
               )   
              )}
              {errorMessege && <Alert variant='danger'>{errorMessege}</Alert>}  
           </Form>
         </ContentContainer>
-        {/*<ContentContainer>
-          <AdsBlock><p className='text-center'>AdSense</p></AdsBlock>
-        </ContentContainer>*/}
       </Container>
     )
   }
