@@ -50,17 +50,17 @@ class HomePage extends React.Component {
 
     return (
       <Container>
-        <Header>Conheça agora Pitu, seu novo encurtador de URL</Header>
+        <Header>Encurtador de URL</Header>
         <ContentContainer> 
           <Form onSubmit={this.handleSubmit}>
-            <InputGroup className='mb-3'>
+            <InputGroup className='mb-4'>
               <FormControl
-                placeholder='Digite a url para encurtar'
+                placeholder='Cole aqui seu link'
                 defaultValue=''
                 onChange={e => this.setState({ url: e.target.value })}
               />
               <InputGroup.Append>
-                <Button variant='primary' type='submit'>Gerar</Button>
+                <Button variant='primary' type='submit'>Encurtar</Button>
               </InputGroup.Append>
             </InputGroup>
 
