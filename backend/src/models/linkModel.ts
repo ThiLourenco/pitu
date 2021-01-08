@@ -10,7 +10,7 @@ export interface ILinkModel extends Model<Link, iLinkCreationAttributes>, Link {
 // when creating the tables rules will be followed
 const LinkModel = database.define<ILinkModel>('link', {
   id: {
-    type: DataTypes.INTEGER.UNSIGNED,
+    type: DataTypes.INTEGER,
     primaryKey: true,
     autoIncrement: true,
     allowNull: false
@@ -25,7 +25,7 @@ const LinkModel = database.define<ILinkModel>('link', {
     allowNull: false
   },
   hits: {
-    type: DataTypes.INTEGER.UNSIGNED,
+    type: DataTypes.INTEGER,
     allowNull: false,
     defaultValue: 0
   }
