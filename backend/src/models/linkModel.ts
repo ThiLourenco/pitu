@@ -1,4 +1,4 @@
-import Sequelize, { Optional, Model, DataTypes } from 'sequelize';
+import { Optional, Model, DataTypes } from 'sequelize';
 import { Link } from './link';
 import database from '../database';
 
