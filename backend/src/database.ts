@@ -1,15 +1,15 @@
+import { Sequelize } from 'sequelize';
 import * as dotenv from 'dotenv';
 dotenv.config();
 
-import { Sequelize } from 'sequelize';
 
-const sequelize = new Sequelize(process.env.DB_CONNECTION_STRING!, {
+const sequelize = new Sequelize(process.env.POSTGRES_URL!, {
   logging: false,
   quoteIdentifiers: false,
   dialectOptions: {
     // ssl: {
-    //   require: true,
-    //   rejectUnauthorized: false
+    //   require: process.env.SSL_DB,
+    //   rejectUnauthorized: process.env.SSL_DB_REJECT
     // }
   }
 });
