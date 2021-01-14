@@ -4,7 +4,7 @@
 
 ## 💻 Projeto
 
-Pitu é um micro-SaaS simples, mas eficiente para encurtar Links e URLs.
+[Pitu](https://pitu-url.vercel.app/) é um micro-SaaS simples, mas eficiente para encurtar Links e URLs.
 
 ### 🚀 Tecnologias
 
